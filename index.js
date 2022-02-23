@@ -11,6 +11,9 @@ const themeBtns = document.querySelectorAll('.theme-buttons');
 //Grabbing the counter text.
 const counterText = document.querySelector('#counter');
 
+const inputBox = document.querySelector('#input-box');
+const inputBtn = document.querySelector('#input-submit');
+
 //Weiting out the necessary functions.
 let count = 0;
 
@@ -45,6 +48,10 @@ const selectTheme = event => {
     buttons.forEach(element => element.className = theme);
 }
 
+const valueChecker = () => {
+    console.log(inputBox.value);
+}
+
 //Add event listener to my elements. .addEventListener(eventType, callback)
 plusBtn.addEventListener('click', increase);
 minusBtn.addEventListener('click', decrease);
@@ -55,4 +62,4 @@ for(let i = 0; i < themeBtns.length; i++){
     themeBtns[i].addEventListener('click', selectTheme)
 };
 
-
+inputBtn.addEventListener('click', valueChecker);
